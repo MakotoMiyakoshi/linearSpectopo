@@ -9,7 +9,7 @@ How to use the function
 
 ![useLinearScale01.jpg](images/useLinearScale01.jpg)
 
-Results comparison
+Results comparison. Left, convention; Right, the new supported feature.
 
 ![useLinearScale02.jpg](images/useLinearScale02.jpg)
 
