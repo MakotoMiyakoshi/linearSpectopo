@@ -1,18 +1,13 @@
-# reorder19channels
-This EEGLAB plugin assumes there are 19 channels in your data whose labels ending with '-LE' i.e. 'Fp1-LE', 'Fp2-LE', etc.. Typically, when you save 19-channel data using [NeuroGuide](https://appliedneuroscience.com/neuroguide/), the saved data look like this. You can confirm it from 'Edit' -> 'Channel locations' and it should look as follows. 
+# Linear spectopo()
+This is a custom spectopo() function for EEGLAB to use linear scale in power spectral density (PSD) plot. You can plot your PSD in microV^2/Hz 
 
-![shot1.jpg](images/shot1.jpg)
 
-Once you confirm it, you run this plugin. No GUI will be launched. Just press the button and it's done.
+Use the custom option 'useLinearScale', 'on' as below, you can plot 
 
-![shot4.jpg](images/shot4.jpg)
+obtain microV^2 plot instead of 10*log10.
 
-Below I show before-after comparison.
+![useLinearScale01.jpg](images/useLinearScale01.jpg)
 
-Before
-![shot2.jpg](images/shot2.jpg)
 
-After
-![shot3.jpg](images/shot3.jpg)
 
-01/12/2024 Makoto Miyakoshi.
+01/29/2024 Makoto Miyakoshi.
