@@ -154,6 +154,7 @@
 % 04-03-02 added axcopy -sm
 % 01/29/2024 Makoto. 'useLinearScale' added (default 'off'). Default changed to: 'freqfac', 10, 'overlap, srate/2.
 % 01/31/2024 Makoto. 'useLinearScale' enabled for IC .
+% 02/28/2024 Makoto. Added the line 'eegspecdBtoplot = eegspecdB;' to patch the problem.
 
 % Uses: MATLAB pwelch(), changeunits(), topoplot(), textsc()
 
@@ -490,6 +491,10 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Convert it back to \muV^2 (01/29/2024 Makoto) %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+if ~exist('eegspecdBtoplot', 'var')
+    eegspecdBtoplot = eegspecdB;
+end
+
 if strcmpi(g.useLinearScale, 'on')
 
     if any(specstd)
@@ -500,12 +505,9 @@ if strcmpi(g.useLinearScale, 'on')
         eegspecdB = 10.^(eegspecdB/10);
     end
 
-    if exist('eegspecdBtoplot', 'var')
-        if any(eegspecdBtoplot)
-            eegspecdBtoplot = 10.^(eegspecdBtoplot/10);
-        end
+    if any(eegspecdBtoplot)
+        eegspecdBtoplot = 10.^(eegspecdBtoplot/10);
     end
-
 end
 
 
